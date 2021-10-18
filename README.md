@@ -1,4 +1,4 @@
-# NameAndEmailDictionary
+# Operating System Chooser
 Thank you for taking the time to look at my resume projects! I'm still a bit new to GitHub and Git, so pardon the formatting :) .
 
 ## Overview
