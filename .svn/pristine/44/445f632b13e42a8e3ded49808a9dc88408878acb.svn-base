@@ -1,0 +1,197 @@
+/**
+ * UserClient generates either generic or specific operating systems
+ * based on user input
+ * @author Jacob Christoffers
+ */
+import java.util.Scanner;
+import java.io.IOException;
+import java.util.ArrayList;
+
+/**
+ * UserClient generates either generic or specific operating systems
+ * based on user input
+ * @author jacvc
+ */
+public class UserClient 
+{
+    public static void main(String[] args) throws IOException
+    {
+        options();
+    }
+    
+    /**
+     * genericOS method to generate a generic os
+     * @throws IOException wrong input
+     */
+    public static void genericOS() throws IOException
+    {
+        //instance variable
+        DecisionTree tree = new DecisionTree();
+        
+        //generating tree
+        System.out.println("Choosing a Generic OS:");
+        tree.createRoot(1, "Does your operating system need to be open source?");
+        tree.addYesNode(1, 2, "You should choose a Linux distrobution");
+        tree.addNoNode(1, 3, "Do you prefer optimized and high-performace gaming (Yes) "
+                + "or do you prefer optimized and high-performace graphical use like photoshop or artistry (No)?");
+        tree.addYesNode(3, 4, "You should choose a version of Windows");
+        tree.addNoNode(3, 5, "You should choose a version of macOS");
+        
+        //query tree
+        tree.queryBinTree();
+    }
+    
+    /**
+     * specificOS method to generate a specific os
+     * @throws IOException wrong input
+     */
+    public static void specificOS() throws IOException
+    {
+        ArrayList<String> specificOSList = new ArrayList<String>();
+        specificOSList.add("Windows 7");
+        specificOSList.add("Windows 8");
+        specificOSList.add("Windows 10");
+        specificOSList.add("macOS Big Sur");
+        specificOSList.add("macOS Catalina");
+        specificOSList.add("Linux Mint");
+        specificOSList.add("Linux Ubuntu");
+        
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("Enter \"1\" to choose Windows, \"2\" to choose macOS, or \"3\" to choose Linux.");
+        String answer = scan.nextLine();
+        //---------------------------------------------------------WINDOWS---------------------------------------------------------//
+        if(answer.equals("1"))
+        {
+            System.out.println("Is Cloud access important to you? (Enter \"Yes\" or \"No\")");
+            String answerWindows = scan.nextLine();
+            if(answerWindows.equals("No"))
+            {
+                Windows windows7 = new Windows("Windows 7", 2009, 120, 
+                        "Windows 7 is built on the Windows Vista kernel and was intended to be an update to the Vista OS", "No", "No");
+                System.out.println("\nYour OS: " +specificOSList.get(0) +"\n" +windows7.toString());
+            }
+            else
+            {
+                if(answerWindows.equals("Yes"))
+                {
+                    System.out.println("Do you want a personal assistant? (Enter \"Yes\" or \"No\")");
+                    String answerWindows2 = scan.nextLine();
+                    if(answerWindows2.equals("No"))
+                    {
+                        Windows windows8 = new Windows("Windows 8", 2012, 120, 
+                            "A completely redesigned operating system developed from the ground up with touchscreen use in mind", "Yes", "No");
+                        System.out.println("\nYour OS: " +specificOSList.get(1) +"\n" +windows8.toString());
+                    }
+                    else
+                    {
+                        if(answerWindows2.equals("Yes"))
+                        {
+                            Windows windows10 = new Windows("Windows 10", 2015, 120, 
+                                    "The primary aims of Windows 10 is to unify the Windows experience across multiple devices, such desktop computers, tablets, and smartphones", "Yes", "Yes");
+                            System.out.println("\nYour OS: " +specificOSList.get(2) +"\n" +windows10.toString());
+                        }
+                        else
+                        {
+                            System.out.println("Error: Enter \"Yes\" or \"No\"");
+                            specificOS();
+                        }
+                    }
+                }
+            }
+        }
+        
+        //---------------------------------------------------------MAC OS---------------------------------------------------------//
+        if(answer.equals("2"))
+        {
+            System.out.println("Do you want an updated design? (Enter \"Yes\" or \"No\")");
+            String answerMacOS = scan.nextLine();
+            if(answerMacOS.equals("Yes"))
+            {
+                MacOS macOSBigSur = new MacOS("macOS Big Sur", 2020, 0, 
+                        "macOS Big Sur is the 17th and current major release of macOS, Apple Inc.'s operating system for Macintosh computers", "Yes");
+                System.out.println("\nYour OS: " +specificOSList.get(3) +"\n" +macOSBigSur.toString());
+            }
+            else
+            {
+                if(answerMacOS.equals("No"))
+                {
+                    MacOS macOSCatalina = new MacOS("macOS Catalina", 2019, 0, 
+                        "macOS Catalina, aka macOS 10.15, is an older version of the operating system that runs on the Mac", "No");
+                    System.out.println("\nYour OS: " +specificOSList.get(4) +"\n" +macOSCatalina.toString());
+                }
+                else
+                {
+                    System.out.println("Error: Enter \"Yes\" or \"No\"");
+                        specificOS();
+                }
+            }
+        }
+        
+        //---------------------------------------------------------LINUX---------------------------------------------------------//
+        if(answer.equals("3"))
+        {
+            System.out.println("Do you want preinstalled apps in your linux distro? (Enter \"Yes\" or \"No\")");
+            String answerLinux = scan.nextLine();
+            if(answerLinux.equals("Yes"))
+            {
+                Linux linuxMint = new Linux("Linux Mint", 2006, 0, 
+                        "To produce a modern, elegant and comfortable operating system which is both powerful and easy to use", "Yes");
+                System.out.println("\nYour OS: " +specificOSList.get(5) +"\n" +linuxMint.toString());
+            }
+            else
+            {
+                if(answerLinux.equals("No"))
+                {
+                    Linux linuxUbuntu = new Linux("Linux Ubuntu", 2004, 0, "An open source Debian-based Linux distribution", "No");
+                    System.out.println("\nYour OS: " +specificOSList.get(6) +"\n" +linuxUbuntu.toString());
+                }
+                else
+                {
+                    System.out.println("Error: Enter \"Yes\" or \"No\"");
+                    specificOS();
+                }
+            }
+        }
+    }
+    
+    //---------------------------------------------------------OPTIONS---------------------------------------------------------
+
+    /**
+     * options for main
+     * @throws IOException wrong input
+     */
+    public static void options() throws IOException
+    {
+        Scanner scan = new Scanner(System.in);
+        
+        System.out.println("\nEnter \"1\" to choose a generic OS, \"2\" to choose a specific OS, or \"3\" to exit the program.");
+        String answer = scan.nextLine();
+        if(answer.equals("1"))
+        {
+            System.out.println("\n");
+            genericOS();
+            options();
+        }
+        else
+        {
+            if(answer.equals("2"))
+            {
+                System.out.println("\n");
+                specificOS();
+            }
+            else
+            {
+                if(answer.equals("3"))
+                {
+                    System.out.println("Exited Program");
+                }
+                else
+                {
+                    System.out.println("\nError: Must answer \"1\", \"2\", or \"3\"");
+                    options();
+                }
+            }
+        }
+    }
+}
