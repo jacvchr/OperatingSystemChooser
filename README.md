@@ -10,7 +10,7 @@ This is the first project on my resume, an operating system chooser created usin
 This project is currently the most advanced project on my resume, with it using advanced data structures, inheritance, and searching and sorting.
 
 ### Operating System Classes
-The first class used in this project is the `OperatingSystem.java` class. This class is used as a base class that the more advanced operating systems (Windows, MacOS, and Linux) can be based off of. The class `OperatingSystem.java` contains public get and set methods of different variables, including: `name`, `releaseData`, `cost`, and `use`. A `toString()` method is also found in `OperatingSystem.java`.
+The first class used in this project is the `OperatingSystem.java` class. This class is used as a base class so the more advanced operating system classes (Windows, MacOS, and Linux) can inherit from it. The class `OperatingSystem.java` contains public get and set methods of different variables, including: `name`, `releaseData`, `cost`, and `use`. A `toString()` method is also found in `OperatingSystem.java`.
 
 The `Windows.java`, `MacOS.java`, and `Linux.java` classes are all similar in nature; they are all derived classes from the `OperatingSystem.java` class. Each class continues the use of the previous variables from `OperatingSystem.java`, however, each class also adds another unique variable (with its own get, set, and updated `toString()` method) to differentiate from each other. `Windows.java` adds the `assistant` variable, `MacOS.java` adds the `updatedDesign` variable, and `Linux.java` adds the `preinstalledApps` variable.
 
