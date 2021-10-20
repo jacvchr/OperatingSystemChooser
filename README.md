@@ -29,5 +29,6 @@ The `UserClient.java` class used in this project is the interface that interacts
 - A `specificOS()` method, which allows the user to select a specific OS from their given generic OS option
 
 The `options()` method uses `java.util.Scanner` to allow the program to read keyboard input. When the user runs `UserClient.java`, they have an option to choose a generic OS, to choose a specific OS, or to exit the program. If they choose generic OS, the `genericOS()` method runs, if they choose the specific OS, the `specificOS()` method runs, and if they choose to exit the program, the program terminates.
+
 The `genericOS()` method creates a new DecisionTree called `tree`, which allows the program to ask premade questions and, based on the output, to recommend a generic OS.
-The `spe
+The `specificOS()` method creates a new ArrayList `specificOSList`, which is used to store the specific OS variations, including Windows 7/8/10, macOS Big Sur/Catalina, or Linux Mint/Ubuntu. The method then asks questions to gain user preference to recommend a specific OS.
