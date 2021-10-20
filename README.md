@@ -20,7 +20,7 @@ The decision tree used in this project is an advanced data structure that uses m
 - Methods to add Yes and No nodes (`addYesNode` and `addNoNode`)
 - Methods to search the Decision tree and sort the Yes/No nodes (`searchTreeAndAddYesNode` and `searchTreeAndAddNoNode`)
 
-Near the end of the class, there are the methods `queryBinTree` (Both default and parameterized constructors) and `askQuestion`. `askQuestion` is a method that is found in the parameterized `queryBinTree`, which is used to ask a question and add the input to the current node. `queryBinTree` is used to create and continue the question/answer flow for the `UserClient.java` class.
+Near the end of the class, there are the methods `queryBinTree` (both default and parameterized constructors) and `askQuestion`. `askQuestion` is a method that is found in the parameterized `queryBinTree`, which is used to ask a question and add the input to the current node. `queryBinTree` is used to create and continue the question/answer flow for the `UserClient.java` class.
 
 ### User Client/Interface
 The `UserClient.java` class used in this project is the interface that interacts with the user. There are three main parts to this class:
@@ -31,4 +31,5 @@ The `UserClient.java` class used in this project is the interface that interacts
 The `options()` method uses `java.util.Scanner` to allow the program to read keyboard input. When the user runs `UserClient.java`, they have an option to choose a generic OS, to choose a specific OS, or to exit the program. If they choose generic OS, the `genericOS()` method runs, if they choose the specific OS, the `specificOS()` method runs, and if they choose to exit the program, the program terminates.
 
 The `genericOS()` method creates a new DecisionTree called `tree`, which allows the program to ask premade questions and, based on the output, to recommend a generic OS.
+
 The `specificOS()` method creates a new ArrayList `specificOSList`, which is used to store the specific OS variations, including Windows 7/8/10, macOS Big Sur/Catalina, or Linux Mint/Ubuntu. The method then asks questions to gain user preference to recommend a specific OS.
