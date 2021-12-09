@@ -7,7 +7,7 @@ This is the first project on my resume, an operating system chooser created usin
 - A Decision Tree
 - A User Client Class
 
-This project is currently the most advanced project on my resume, with it using advanced data structures, inheritance, and searching and sorting.
+This project uses advanced data structures, inheritance, and searching and sorting.
 
 ### Operating System Classes
 The first class used in this project is the `OperatingSystem.java` class. This class is used as a base class so the more advanced operating system classes (Windows, MacOS, and Linux) can inherit from it. The class `OperatingSystem.java` contains public get and set methods of different variables, including: `name`, `releaseData`, `cost`, and `use`. A `toString()` method is also found in `OperatingSystem.java`.
