@@ -1,6 +1,9 @@
 # Operating System Chooser
 Thank you for taking the time to look at my resume projects! I'm still a bit new to GitHub and Git, so pardon the formatting :) .
 
+## How To Use
+//Add how to use section to help people see and use project
+
 ## Overview
 This is the first project on my resume, an operating system chooser created using Java in NetBeans. There are three main parts to this project: 
 - Operating System Classes
