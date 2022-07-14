@@ -1,5 +1,4 @@
 # Operating System Chooser
-Thank you for taking the time to look at my resume projects! I'm still a bit new to GitHub and Git, so pardon the formatting :) .
 
 ## How To Use
 1) Clone or download the ZIP file of this repository (Use the green Code button in the upper right).
